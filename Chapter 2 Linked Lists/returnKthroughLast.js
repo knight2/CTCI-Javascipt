@@ -1,4 +1,4 @@
-const LinkedList = require("../Chapter 2 Linked Lists/util/LinkedListX");
+const LinkedList = require("./util/LinkedListX");
 
 let findKtoLast = function(k, list){
     //two pointers, fast and slow
