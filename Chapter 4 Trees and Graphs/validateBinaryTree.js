@@ -13,14 +13,14 @@ let validateBST = function(bt){
 
     let validateRecurse = function(currBt, stackArr){
         for (let i = 0; i < stackArr.length; i++){
-            if (stackArr[i].side === 'left' && currBt.value < stackArr[i].node.value){
+            if (stackArr[i].side === 'left' && currBt.value > stackArr[i].node.value){
                 return false;
             } else if (stackArr[i].side === 'right' && currBt.value < stackArr[i].node.value){
                 return false;
             }
         }
         let left = currBt.left === null ? true : validateRecurse(currBt.left, stackArr.concat([{node:currBt, side:"left"}]));
-        let right = currBt.right = null ? true : validateRecurse(currBt.right, stackArr.concat([{node:currBt, side:"right"}]));
+        let right = currBt.right === null ? true : validateRecurse(currBt.right, stackArr.concat([{node:currBt, side:"right"}]));
         return true && left && right;
     };
     return validateRecurse(bt, []);
