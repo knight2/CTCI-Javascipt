@@ -17,7 +17,7 @@ let findSuccessor = function(node){
         }
     } else if (node.parent !== null){
         let currNode = node;
-        while(currNode.parent !== null){
+        while(currNode.parent !== null && successor === null){
             if(currNode.parent.left === currNode){
                 successor= currNode.parent;
             }
